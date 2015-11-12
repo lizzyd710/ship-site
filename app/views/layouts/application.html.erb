@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="jumbotron.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="C:\Users\Lizzy\Documents\Programming Stuff\Ruby on Rails\Ship_Site\app\assets\stylesheets\cssfile.css"/>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="nav">
+		<ul id="left">
+      		<li><a href="/home">Home</a></li>
+      		<li><a href="/fandoms">Fandoms</a></li>
+      		<!-- <li><a href="/fanfics">Fanfics</a></li> -->
+      		<li><a href="/filtertest">Filter Test</a></li>
+      		<li><a href="#">Search Test</a></li>
+          <li><a href="/upload">Upload</a></li>
+    	</ul>
+		<ul id="right">
+			<% if current_user %> 
+  				<ul> <!-- Maybe take away this ul and the one under the else since I already have one in the nav -->
+    				<li><%= link_to current_user.username, user_path(current_user) %></li> 
+    				<li><%= link_to "Log out", logout_path, method: "delete" %></li> 
+  				</ul> 
+			<% else %> 
+  				<ul> 
+    				<li><%= link_to "Log In", '/login' %></a></li> 
+    				<li><%= link_to "Register", '/register' %></a></li> 
+  				</ul> 
+			<% end %>
+		</ul>
+	</div>
+
+<%= yield %>
+
+</body>
+</html>

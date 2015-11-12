@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="C:\Users\Lizzy\Documents\Programming Stuff\Ruby on Rails\Ship_Site\app\assets\stylesheets\dashboard.css" rel="stylesheet">
+  <title>Ship Site | <%= @user.username %>'s Uploads</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li><%= link_to "Personal-ish Stuff", user_path(@user) %></li>
+          <li class="active"><%= link_to "Uploads", showuploads_url(id: @user.id) %><span class="sr-only">(current)</span></li>
+          <li><%= link_to "Favorites", showfavorites_url(id: @user.id) %></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><%= link_to "OTPs", showotps_url(id: @user.id) %></li>
+          <li><%= link_to "BrOTPs", showbrotps_url(id: @user.id) %></li>
+          <li><a href="">OT3s</a></li>
+          <li><a href="">NOTP (Not no toilet paper)</a></li>
+          <!-- <li><a href="">More navigation</a></li> -->
+        </ul>
+        <ul class="nav nav-sidebar">
+          <% if current_user == @user %>
+            <li><%= link_to "Edit Profile", edit_url(id: current_user) %></li>
+          <% end %>
+          <!-- <li><a href="">One more nav</a></li>
+          <li><a href="">Another nav item</a></li> -->
+        </ul>
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header"><%= @user.username %></h1>
+        <div class="row placeholders">
+          <div class="col-xs-6 col-sm-3 placeholder">
+           <%= image_tag("julio.png", :class => "img-responsive") %>
+          </div>
+          <div class="bio">
+            <p><%= @user.bio %></p>
+          </div>
+        </div>
+        <h2 class="sub-header"><%= @user.username %>'s Uploads</h2>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Fandom</th>
+                <th>Updated</th>
+                <th>Complete?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @works.each do |fic| %> 
+                  <tr>
+                    <td><%= link_to fic.title, work_path(fic) %></td>
+                    <td><%= fic.description %></td>
+                    <td><%= link_to fic.fandom.name, fandom_path(fic.fandom) %></td>
+                    <td><%= fic.updated_at %></td>
+                    <% if fic.complete == true %>
+                      <td>Yes</td>
+                    <% else %>
+                      <td>No</td>                      
+                    <% end %>
+                  </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

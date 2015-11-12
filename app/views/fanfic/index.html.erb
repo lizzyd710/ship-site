@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="jumbotron.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="C:\Users\Lizzy\Documents\Programming Stuff\Ruby on Rails\Ship_Site\app\assets\stylesheets\cssfile.css"/>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <title>Ship Site | Fanfics</title>
+</head>
+
+<body>
+	<div class="header">
+  	<div class="container">
+    	<h1>Fanfics</h1>
+  	</div>
+	</div>
+
+	<div class="fanfictions">
+		<div class="container">
+			<% @fanfics.each do |fic| %> 
+			<div class="fanfic"> 
+  				<p class="title"><%= link_to fic.title, fanfic_path(fic) %> by <%= link_to User.find(fic.user_id).username, user_path(fic.user_id) %></p> 
+			</div> 
+			<% end %>
+		</div>
+	</div>
+</body>

@@ -1,0 +1,21 @@
+<head>
+  <title><%= @fandom.name %> Works</title>
+</head>
+<div class="main">
+  <div class="container">
+  <h2>Fandoms</h2>
+  	<div class="fandom">
+  		<h1><%= @fandom.name %></h1>
+  	</div>
+    <div class="characters">
+      <% @fandom.characters.each do |character| %>
+        <h5><%= character.name %></h5>
+      <% end %>
+    </div>
+  	<% @fanfics.each do |fic| %> 
+		  <% if fic.fandom.name == @fandom.name %>
+			 <p><%= link_to fic.title, fanfic_path(fic) %> by <%= link_to User.find(fic.user_id).username, user_path(fic.user_id) %></p>
+		  <% end %>
+    <% end %>
+  </div>
+</div>

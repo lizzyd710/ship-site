@@ -1,0 +1,61 @@
+.nav a
+{
+  color: #5a5a5a;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 50px;
+  text-transform: uppercase;
+}
+.nav li
+{
+  display: inline;
+}
+#left
+{
+  float: left;
+}
+#right
+{
+  float: right;
+}
+.jumbotron {
+  background-image:url('file:///C:/Users/Lizzy/Pictures/JOIN THE SHIP BOORGIS.png');
+  /*background-image:url('https://s-media-cache-ak0.pinimg.com/736x/2d/96/70/2d96700d049c7668105310aff219352f.jpg');*/
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.jumbotron .container {
+  position: relative;
+  top:100px;
+}
+.login {
+  font-size:;
+}
+.dropdown-menu {
+  font-size: 16px;
+  margin-top: 5px;
+  min-width: 105px;
+}
+/*.dropdown-menu {
+  font-size: 16px;
+  margin-top: 5px;
+  min-width: 105px;
+}*/
+
+.dropdown-menu li a {
+  color: #898989;
+  padding: 6px 20px;
+  font-weight: 300;
+}
+.filtered-works li {
+  background-color: #fff;
+  border: 1px solid #d8d8d8;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  min-height: 42px;
+}

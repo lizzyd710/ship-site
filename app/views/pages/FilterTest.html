@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="jumbotron.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="C:\Users\Lizzy\Documents\Programming Stuff\Ruby on Rails\Ship_Site\app\assets\stylesheets\cssfile.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <title>Fandoms and Stuff</title>
+</head>
+
+<body>
+  <div class="filter-div" onsubmit="return filterWorks()" method = "post">
+    <p>Filter</p>
+    <form name="filter">
+      Ship:<br>
+      <input type="text" name="ship-field">
+    </br>
+    </form>
+    <!-- <button type="button" class="btn btn-default">Go</button> -->
+    <a href="#" class="go">Go!</a>
+  </div>
+  <a href="#" class="new-fic">New Fic</a>
+  <br>
+  <a href="#" class = "hide-all">Hide All</a>
+  </br>
+  <div class = "hiddenmsg">
+  </div>
+  <div>
+    <p>Filtered Works</p>
+    <ul class="filtered-works">
+    </ul>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- <script type="text/javascript" src="C:\Users\Lizzy\Documents\Programming Stuff\Ruby on Rails\Ship_Site\app\assets\javascripts\filter.js"></script> -->
+  <!--<script type="text/javascript" src="C:\Users\Lizzy\Documents\Programming Stuff\Ruby on Rails\Ship_Site\app\assets\javascripts\app.js"></script>-->
+</body>
+</html>

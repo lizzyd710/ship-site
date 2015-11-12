@@ -1,0 +1,13 @@
+<head>
+  <title>Ship Site | Fandoms</title>
+</head>
+<div class="main">
+  <div class="container">
+  <h2>Fandoms</h2>
+    <% @fandoms.each do |fandom| %>
+    <div class="fandoms"> <!--Make a CSS rule so that this div is lowered a bit-->
+      <h4><%= link_to fandom.name, fandom_path(fandom) %></h4>
+    </div>
+    <% end %>
+  </div>
+</div>
