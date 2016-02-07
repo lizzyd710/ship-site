@@ -1,23 +1,12 @@
 Rails.application.routes.draw do
   root 'pages#HomePage'
   get 'home' => 'pages#HomePage'
-  get 'filtertest' => 'pages#FilterTest'
-  get 'testprofile' => 'pages#TestProfile'
-  get 'testprofileotps' => 'pages#TestProfileOTPs'
-  get 'testprofilebrotps' => 'pages#TestProfileBROTPs'
-  get 'testprofileuploads' => 'pages#TestProfileUploads'
 
   get 'fandoms' => 'fandoms#index'
   get 'fandoms/new' => 'fandoms#new'
   post 'fandoms' => 'fandoms#create'
   get 'fandoms/:id' => 'fandoms#show', as: :fandom
   resources :fandoms
-
-
-  get 'fanfics' => 'fanfic#index'
-  resources :fanfic
-  get 'fanfics/new' => 'fanfic#new'
-  post 'fanfics' => 'fanfic#create'
 
   get 'register' => 'users#new'
   resources :users
@@ -32,8 +21,10 @@ Rails.application.routes.draw do
   get 'users/:id/otps' => 'users#showotps', as: :showotps
   get 'users/:id/brotps' => 'users#showbrotps', as: :showbrotps
   get 'users/:id/edit' => 'users#edit', as: :edit
+  get 'users/:id/edit-works' => 'users#editworks', as: :editworks
 
   get 'upload' => 'works#new'#'pages#UploadWork'
+  get '/works/:id/:chapter_id', :controller => :chapter, :action => :show, as: :work
   resources :works
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907221236) do
+ActiveRecord::Schema.define(version: 20160204001536) do
+
+  create_table "chapters", force: :cascade do |t|
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "title"
+    t.integer  "chapter_number"
+    t.text     "content"
+    t.integer  "work_id"
+  end
 
   create_table "characters", force: :cascade do |t|
     t.datetime "created_at"
@@ -73,6 +82,9 @@ ActiveRecord::Schema.define(version: 20150907221236) do
     t.text     "content"
     t.integer  "user_id"
     t.integer  "fandom_id"
+    t.integer  "chapter_id"
   end
+
+  add_index "works", ["chapter_id"], name: "index_works_on_chapter_id"
 
 end

@@ -1,0 +1,13 @@
+<head>
+  <title><%= @work.title %></title>
+</head>
+<div class="main">
+  <div class="work-header">
+  	<div id="title"><h2><%= @work.title %></h2></div>
+    <div id="author"><h4><%= link_to User.find(@work.user_id).username, user_path(@work.user_id) %></h4></div>
+  </div>
+  <div class="container">
+    <div id="info-box"></div> <!--That has nothing yet but it will soon -->
+    <div id="content"><%= @chapter.content %></div>
+  </div>
+</div>

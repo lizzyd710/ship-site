@@ -21,7 +21,7 @@ class FanficController < ApplicationController
 	end
 	def show
 		@fanfic = Fanfic.find(params[:id])
-		@fandom = @fanfic.fandoms
+		@ficfandom = @fanfic.fandoms
 		@author = @fanfic.user_id
 	end
 private

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user, only: [:edit]
+  before_action :require_user, only: [:edit, :editworks]
   def new
     @user = User.new
   end
@@ -17,7 +17,6 @@ class UsersController < ApplicationController
   end
   def showuploads
     @user = User.find(params[:id])
-    #@fanfics = @user.fanfics
     @works = @user.works
   end
   def showfavorites
@@ -30,6 +29,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])    
   end
   def edit
+    @user = User.find(params[:id])
+  end
+  def editworks
     @user = User.find(params[:id])
   end
 private

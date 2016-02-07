@@ -12,10 +12,16 @@
         <h5><%= character.name %></h5>
       <% end %>
     </div>
-  	<% @fanfics.each do |fic| %> 
-		  <% if fic.fandom.name == @fandom.name %>
-			 <p><%= link_to fic.title, fanfic_path(fic) %> by <%= link_to User.find(fic.user_id).username, user_path(fic.user_id) %></p>
-		  <% end %>
+    <div class="filter">
+      <h6>Filter</h6>
+    </div>
+  	<% @works.each do |work| %>
+      <div class="work-info">
+        <p id="title-author"><%= link_to work.title, work_path(work, work.chapter_id) %> by <%= link_to User.find(work.user_id).username, user_path(work.user_id) %></p>
+        <p id="fandom"><%= link_to @fandom.name, fandom_path(@fandom) %></p>
+        <p id="description"><%= work.description %></p>
+        <p id="stats">Updated on: <%= work.updated_at.strftime("%d %b %y") %> Uploaded on: <%= work.created_at.strftime("%d %b %y") %></p>
+      </div>
     <% end %>
   </div>
 </div>

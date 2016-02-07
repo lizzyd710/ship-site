@@ -12,6 +12,6 @@ class CharactersController < ApplicationController
 	end
 private 
 	def character_params
-		params.require(:character).permit(:name)		
+		params.require(:character).permit(:name, :fandom_id)		
 	end	
 end

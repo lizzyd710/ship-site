@@ -15,7 +15,7 @@ class FandomsController < ApplicationController
 	end
 	def show
 		@fandom = Fandom.find(params[:id])
-		@fanfics = Work.all
+		@works = @fandom.works
 	end
 private 
 	def fandom_params

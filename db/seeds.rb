@@ -14,5 +14,5 @@
 #
 #Characters
 #
-Sherlock_Characters = Character.create([{name: 'Sherlock Holmes', fandom: Sherlock}, {name: 'John Watson', fandom: Sherlock}, {name: 'John Watson', fandom: Sherlock}])
+Sherlock_Characters = Character.create([{name: 'Sherlock Holmes', fandom: Sherlock}, {name: 'John Watson', fandom: Sherlock}, {name: 'Mrs. Hudson', fandom: Sherlock}])
 Supernatural_Characters = Character.create([{name: 'Dean Winchester', fandom: Supernatural}, {name: 'Sam Winchester', fandom: Supernatural}, {name: 'Castiel', fandom: Supernatural}])

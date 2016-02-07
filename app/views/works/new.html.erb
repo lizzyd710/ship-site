@@ -30,7 +30,7 @@
           <p>Fandom: </p>
           <%= f.collection_select(:fandom_id, Fandom.all, :id, :name) %>
           <p>Content: </p>
-          <%= f.text_area :content %>
+          <%= text_area :chapter, :content %>
   		  </div> 
   		  <div class="actions"> 
     		  <%= f.submit "Create" %> 

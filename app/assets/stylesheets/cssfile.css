@@ -29,25 +29,6 @@
   position: relative;
   top:100px;
 }
-.login {
-  font-size:;
-}
-.dropdown-menu {
-  font-size: 16px;
-  margin-top: 5px;
-  min-width: 105px;
-}
-/*.dropdown-menu {
-  font-size: 16px;
-  margin-top: 5px;
-  min-width: 105px;
-}*/
-
-.dropdown-menu li a {
-  color: #898989;
-  padding: 6px 20px;
-  font-weight: 300;
-}
 .filtered-works li {
   background-color: #fff;
   border: 1px solid #d8d8d8;
@@ -58,4 +39,28 @@
   margin-bottom: 10px;
   word-wrap: break-word;
   min-height: 42px;
+}
+
+/*The Style for the works index for each fandom. Like the thing that has all of the info about it.*/
+.work-info
+{
+  border-style: solid;
+  border-width: 1px;
+  border-color: #000000;
+  margin: 0.643em 0px;
+  padding: 0.429em 0.75em;
+}
+
+/*Styles for the actual work. The show page of the work.*/
+.work-header
+{
+
+}
+.work-header h2
+{
+  text-align: center;
+}
+.work-header h4
+{
+  text-align: center;
 }
