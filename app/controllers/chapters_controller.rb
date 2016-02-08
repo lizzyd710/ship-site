@@ -1,4 +1,5 @@
 class ChaptersController < ApplicationController
+	#Requires a user to be logged in to use the new and edit methods.
 	before_action :require_user, only: [:new, :edit]
 
 	def new

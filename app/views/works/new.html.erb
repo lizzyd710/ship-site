@@ -21,14 +21,14 @@
 
   <div class="create">
     <div class="container">
-      <%= form_for(@work) do |f| %>  
+      <%= form_for(@work) do |f| %>
   		  <div class="field"> 
           <p>Title: </p> 
     		  <%= f.text_area :title %><br>
           <p>Description: </p>
           <%= f.text_area :description %><br>
           <p>Fandom: </p>
-          <%= f.collection_select(:fandom_id, Fandom.all, :id, :name) %>
+          <%= f.collection_select(:fandom_id, Fandom.all, :id, :name) %> <!--Dropdown menu to select fandoms. Temporary method of selection since there are only 3 fandoms for testing -->
           <p>Content: </p>
           <%= text_area :chapter, :content %>
   		  </div> 

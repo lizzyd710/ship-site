@@ -8,19 +8,19 @@
   		<h1><%= @fandom.name %></h1>
   	</div>
     <div class="characters">
-      <% @fandom.characters.each do |character| %>
+      <% @fandom.characters.each do |character| %> <!-- Lists all of the characters in the fandom. Only for testing, will not be here in the final-->
         <h5><%= character.name %></h5>
       <% end %>
     </div>
     <div class="filter">
-      <h6>Filter</h6>
+      <h6>Filter</h6> <!--Will eventually place the filter here. If I can use javascript to search through properties of the ruby on rails objects, then the filter script will be js -->
     </div>
   	<% @works.each do |work| %>
       <div class="work-info">
-        <p id="title-author"><%= link_to work.title, work_path(work, work.chapter_id) %> by <%= link_to User.find(work.user_id).username, user_path(work.user_id) %></p>
-        <p id="fandom"><%= link_to @fandom.name, fandom_path(@fandom) %></p>
-        <p id="description"><%= work.description %></p>
-        <p id="stats">Updated on: <%= work.updated_at.strftime("%d %b %y") %> Uploaded on: <%= work.created_at.strftime("%d %b %y") %></p>
+        <p id="title-author"><%= link_to work.title, work_path(work, work.chapter_id) %> by <%= link_to User.find(work.user_id).username, user_path(work.user_id) %></p> <!--Title linking to the work, then the author linking to the author's profile page-->
+        <p id="fandom"><%= link_to @fandom.name, fandom_path(@fandom) %></p> <!--Fandom linking to the fandom's page. Probably unecessary unless someone does a crossover work -->
+        <p id="description"><%= work.description %></p> <!--Displays the work's description-->
+        <p id="stats">Updated on: <%= work.updated_at.strftime("%d %b %y") %> Uploaded on: <%= work.created_at.strftime("%d %b %y") %></p><!--Displays when the work was uploaded and when it was last updated-->
       </div>
     <% end %>
   </div>
