@@ -24,9 +24,9 @@ Rails.application.routes.draw do
   get 'users/:id/edit-works' => 'users#editworks', as: :editworks
 
   get 'upload' => 'works#new'#'pages#UploadWork'
-  get '/works/:id/:chapter_id', :controller => :chapter, :action => :show, as: :work
+  get '/works/:id/:chapter_id', :controller => :chapters, :action => :show, as: :work
   resources :works
-  get '/chapters/new/:work_id', :controller => :chapter, :action => :create, as: :newchapter
+  get '/chapters/new/:work_id', :controller => :chapters, :action => :create, as: :newchapter
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
