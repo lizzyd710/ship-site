@@ -16,6 +16,6 @@ class ChaptersController < ApplicationController
 
 private
 	def chapter_params
-		params.require(:chapter).permit(:title, :chapter_number, :content)
+		params.require(:chapter).permit(:title, :chapter_number, :content) #gives me an error here after the first part of upload process
 	end
 end
