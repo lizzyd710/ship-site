@@ -2,9 +2,8 @@ class WorksController < ApplicationController
 	#Just for testing, on the upload thing there will be a place where you choose what type of work you want to upload.
 	#Copying directly from fanfic_controller with a few minor alterations
 
-	before_action :require_user, only: [:new, :edit] #oh so the things in the brackets must be the .html.erb names
-	#wait no, they're methods
-
+	before_action :require_user, only: [:new, :edit]
+	
 	def index
 		@works = Work.all
 	end
