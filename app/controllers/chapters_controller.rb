@@ -10,7 +10,8 @@ class ChaptersController < ApplicationController
 		@chapter.work_id= params[:work_id] #hopefully this should get the id from the url
 	end
 	def show
-		@chapter = Chapter.find(params[:id])
+		@chapter = Chapter.find(params[:id]) #wait this would mean that it's like every chapter has a different id no matter what work it belongs to
+											 #the ao3 chapters controller has this being @chapter = @work.chapters.find_by_id(params[:id]) under def show
 		@work = @chapter.work	
 	end
 
