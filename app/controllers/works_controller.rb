@@ -3,7 +3,7 @@ class WorksController < ApplicationController
 	#Copying directly from fanfic_controller with a few minor alterations
 
 	before_action :require_user, only: [:new, :edit]
-	
+
 	def index
 		@works = Work.all
 	end
